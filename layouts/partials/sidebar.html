@@ -1,0 +1,20 @@
+<section class="section">
+  <aside class="menu">
+    <p class="menu-label">Pages</p>
+    <ul class="menu-list">
+    <li><a href="/">Home</a></li>
+    {{ range .Data.Pages }}
+      {{ if eq .Type "page" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+    </ul>
+    <p class="menu-label">Posts</p>
+    <ul class="menu-list">
+    {{ range .Site.Pages }}
+      {{ if eq .Kind "page" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </aside>
+</section>
