@@ -7,7 +7,10 @@
   <div class="column is-three-quarters">
     <section class="section">
       <h1 class="title">{{ .Title }}</h1>
-      <h2 class="subtitle">{{ .Date.Format "Monday, Jan 2, 2006" }}</h2>
+      <h2 class="subtitle">
+	{{ .Date.Format "Monday, Jan 2, 2006" }}<br />
+        <small>{{ delimit .Params.tags ", " }}</small>
+      </h2>
       <hr />
       <div class="container">
         {{ .Content }}
